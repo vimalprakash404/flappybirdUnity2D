@@ -11,6 +11,8 @@ public class Logic : MonoBehaviour
     public Text HighScore;
     public GameObject gameovrscreen;
     public int highscore;
+    public Collider2D Collider2D;
+    public Text sample;
     private void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
@@ -28,6 +30,7 @@ public class Logic : MonoBehaviour
     }
     public void gameover()
     {
+        Collider2D.enabled = false;
         if (highscore < playerscore)
         {
             PlayerPrefs.SetInt("highscore", playerscore);
